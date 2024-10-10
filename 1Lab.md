@@ -197,18 +197,17 @@ internal class Program
     
     public int maxAbs(int[] arr) // 4.3
     {
-        int maxAbsValue = int.MinValue;
-        int maxValue = 0;
-
-        for (int i = 0; i < arr.Length; i++)
+        int maxValue = Math.Abs(arr[0]);
+        
+        for (int i = 1; i < arr.Length; i++)
         {
             int absValue = Math.Abs(arr[i]);
-            if (absValue > maxAbsValue)
+            if (absValue > maxValue)
             {
-                maxAbsValue = absValue;
-                maxValue = arr[i];
+                maxValue = absValue;
             }
         }
+        
         return maxValue;
     }
     
@@ -241,12 +240,12 @@ internal class Program
     
     public int[] reverseBack(int[] arr) // 4.7
     {
-        int[] reversedArr = new int[arr.Length];
+        int[] res = new int[arr.Length];
         for (int i = 0; i < arr.Length; i++)
         {
-            reversedArr[i] = arr[arr.Length - i - 1];
+            res[i] = arr[arr.Length - i - 1];
         }
-        return reversedArr;
+        return res;
     }
     
     
@@ -259,15 +258,15 @@ internal class Program
                 count++;
         }
 
-        int[] indeks1 = new int[count];
+        int[] index = new int[count];
         int j = 0;
         for (int i = 0; i < arr.Length; i++)
         {
             if (arr[i] == x)
-                indeks1[j++] = i;
+                index[j++] = i;
         }
 
-        return indeks1;
+        return index;
     }
     
 
@@ -527,8 +526,8 @@ internal class Program
                         {
                             arr4[i] = int.Parse(input2[i]);
                         }
-                        int[] reversedArr = p19.reverseBack(arr4);
-                        Console.WriteLine("Результат: [" + string.Join(", ", reversedArr) + "]");
+                        int[] res = p19.res(arr4);
+                        Console.WriteLine("Результат: [" + string.Join(", ", res) + "]");
                         break;
                     case 9:
                         Program p20 = new Program();
