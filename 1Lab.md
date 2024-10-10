@@ -526,7 +526,7 @@ internal class Program
                         {
                             arr4[i] = int.Parse(input2[i]);
                         }
-                        int[] res = p19.res(arr4);
+                        int[] res = p19.reverseBack(arr4);
                         Console.WriteLine("Результат: [" + string.Join(", ", res) + "]");
                         break;
                     case 9:
