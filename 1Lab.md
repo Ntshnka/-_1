@@ -300,19 +300,36 @@ internal class Program
                 {
                     case 1:
                         Console.Write("Введите число: ");
-                        double userInput1 = Convert.ToDouble(Console.ReadLine());
+                        double userInput1;
+                        while (!double.TryParse(Console.ReadLine(), out userInput1))
+                        {
+                            Console.WriteLine("Некорректный ввод. Пожалуйста, введите число.");
+                            Console.Write("Введите число: ");
+                        }
                         double fractionalPart = p.fraction(userInput1);
                         Console.WriteLine($"Дробная часть числа: {fractionalPart}");
                         break;
+                    
                     case 3:
                         Console.Write("Введите число от 0 до 9: ");
-                        char x = Console.ReadLine()[0];
+                        char x;
+                        while (!char.TryParse(Console.ReadLine(), out x))
+                        {
+                            Console.WriteLine("Некорректный ввод. Пожалуйста, введите цифру от 0 до 9.");
+                            Console.Write("Введите число от 0 до 9: ");
+                        }
                         int result1 = p.charToNum(x);
                         Console.WriteLine("Результат: " + result1);
                         break;
+                    
                     case 5:
                         Console.Write("Введите число: ");
-                        int userInput2 = Convert.ToInt32(Console.ReadLine());
+                        int userInput2;
+                        while (!int.TryParse(Console.ReadLine(), out userInput2))
+                        {
+                            Console.WriteLine("Некорректный ввод. Пожалуйста, введите целое число.");
+                            Console.Write("Введите число: ");
+                        }
                         bool result2 = p.is2Digits(userInput2);
                         if (result2)
                         {
@@ -323,29 +340,69 @@ internal class Program
                             Console.WriteLine($"false");
                         }
                         break;
+                    
                     case 7:
                         Console.Write("Введите значение a: ");
-                        int a1 = Convert.ToInt32(Console.ReadLine());
+                        int a1;
+                        while (!int.TryParse(Console.ReadLine(), out a1))
+                        {
+                            Console.WriteLine("Некорректный ввод. Пожалуйста, введите целое число.");
+                            Console.Write("Введите значение a: ");
+                        }
+                    
                         Console.Write("Введите значение b: ");
-                        int b1 = Convert.ToInt32(Console.ReadLine());
+                        int b1;
+                        while (!int.TryParse(Console.ReadLine(), out b1))
+                        {
+                            Console.WriteLine("Некорректный ввод. Пожалуйста, введите целое число.");
+                            Console.Write("Введите значение b: ");
+                        }
+                    
                         Console.Write("Введите значение num: ");
-                        int num1 = Convert.ToInt32(Console.ReadLine());
+                        int num1;
+                        while (!int.TryParse(Console.ReadLine(), out num1))
+                        {
+                            Console.WriteLine("Некорректный ввод. Пожалуйста, введите целое число.");
+                            Console.Write("Введите значение num: ");
+                        }
+                    
                         bool result3 = p.IsInRange(a1, b1, num1);
                         Console.WriteLine($"Результат: {result3}");
                         break;
+                    
                     case 9:
                         Console.Write("Введите значение a: ");
-                        int a2 = Convert.ToInt32(Console.ReadLine());
+                        int a2;
+                        while (!int.TryParse(Console.ReadLine(), out a2))
+                        {
+                            Console.WriteLine("Некорректный ввод. Пожалуйста, введите целое число.");
+                            Console.Write("Введите значение a: ");
+                        }
+                    
                         Console.Write("Введите значение b: ");
-                        int b2 = Convert.ToInt32(Console.ReadLine());
+                        int b2;
+                        while (!int.TryParse(Console.ReadLine(), out b2))
+                        {
+                            Console.WriteLine("Некорректный ввод. Пожалуйста, введите целое число.");
+                            Console.Write("Введите значение b: ");
+                        }
+                    
                         Console.Write("Введите значение c: ");
-                        int c2 = Convert.ToInt32(Console.ReadLine());
+                        int c2;
+                        while (!int.TryParse(Console.ReadLine(), out c2))
+                        {
+                            Console.WriteLine("Некорректный ввод. Пожалуйста, введите целое число.");
+                            Console.Write("Введите значение c: ");
+                        }
+                    
                         bool result4 = p.isEqual(a2, b2, c2);
                         Console.WriteLine($"Результат: {result4}");
                         break;
+                    
                     default:
                         Console.WriteLine("Неправильный выбор задачи");
                         break;
+
                 }
                 break;
             case 2:
@@ -363,43 +420,94 @@ internal class Program
                 {
                     case 1:
                         Console.Write("Введите число: ");
-                        string userInput3 = Console.ReadLine();
-                        int x3 = Convert.ToInt32(userInput3);
+                        int x3;
+                        while (!int.TryParse(Console.ReadLine(), out x3))
+                        {
+                            Console.WriteLine("Некорректный ввод. Пожалуйста, введите целое число.");
+                            Console.Write("Введите число: ");
+                        }
                         Console.WriteLine("Модуль числа: " + p.abs(x3));
                         break;
+                    
                     case 3:
                         Console.Write("Введите число: ");
-                        int x4 = Convert.ToInt32(Console.ReadLine());
+                        int x4;
+                        while (!int.TryParse(Console.ReadLine(), out x4))
+                        {
+                            Console.WriteLine("Некорректный ввод. Пожалуйста, введите целое число.");
+                            Console.Write("Введите число: ");
+                        }
                         bool result5 = p.is35(x4);
                         Console.WriteLine("Результат: " + result5);
                         break;
+                    
                     case 5:
                         Console.Write("Введите первое число: ");
-                        int x5 = Convert.ToInt32(Console.ReadLine());
+                        int x5;
+                        while (!int.TryParse(Console.ReadLine(), out x5))
+                        {
+                            Console.WriteLine("Некорректный ввод. Пожалуйста, введите целое число.");
+                            Console.Write("Введите первое число: ");
+                        }
+                    
                         Console.Write("Введите второе число: ");
-                        int y5 = Convert.ToInt32(Console.ReadLine());
+                        int y5;
+                        while (!int.TryParse(Console.ReadLine(), out y5))
+                        {
+                            Console.WriteLine("Некорректный ввод. Пожалуйста, введите целое число.");
+                            Console.Write("Введите второе число: ");
+                        }
+                    
                         Console.Write("Введите третье число: ");
-                        int z5 = Convert.ToInt32(Console.ReadLine());
+                        int z5;
+                        while (!int.TryParse(Console.ReadLine(), out z5))
+                        {
+                            Console.WriteLine("Некорректный ввод. Пожалуйста, введите целое число.");
+                            Console.Write("Введите третье число: ");
+                        }
+                    
                         int max = p.max3(x5, y5, z5);
                         Console.WriteLine("Максимальное число: " + max);
                         break;
+                    
                     case 7:
                         Console.Write("Введите число x: ");
-                        int x6 = Convert.ToInt32(Console.ReadLine());
+                        int x6;
+                        while (!int.TryParse(Console.ReadLine(), out x6))
+                        {
+                            Console.WriteLine("Некорректный ввод. Пожалуйста, введите целое число.");
+                            Console.Write("Введите число x: ");
+                        }
+                    
                         Console.Write("Введите число y: ");
-                        int y6 = Convert.ToInt32(Console.ReadLine());
+                        int y6;
+                        while (!int.TryParse(Console.ReadLine(), out y6))
+                        {
+                            Console.WriteLine("Некорректный ввод. Пожалуйста, введите целое число.");
+                            Console.Write("Введите число y: ");
+                        }
+                    
                         int result6 = p.Sum2(x6, y6);
                         Console.WriteLine("Результат: " + result6);
                         break;
+                    
                     case 9:
-                        Console.Write("Введите день недели: ");
-                        int x7 = Convert.ToInt32(Console.ReadLine());
+                        Console.Write("Введите день недели (1-7): ");
+                        int x7;
+                        while (!int.TryParse(Console.ReadLine(), out x7) || x7 < 1 || x7 > 7)
+                        {
+                            Console.WriteLine("Некорректный ввод. Пожалуйста, введите число от 1 до 7.");
+                            Console.Write("Введите день недели (1-7): ");
+                        }
+                    
                         string result = p.Day(x7);
                         Console.WriteLine(result);
                         break;
+                    
                     default:
                         Console.WriteLine("Неправильный выбор задачи");
                         break;
+
                 }
                 break;
             case 3:
@@ -418,40 +526,71 @@ internal class Program
                     case 1:
                         Program p11 = new Program();
                         Console.Write("Введите число: ");
-                        int x = Convert.ToInt32(Console.ReadLine());
+                        int x;
+                        while (!int.TryParse(Console.ReadLine(), out x))
+                        {
+                            Console.WriteLine("Некорректный ввод. Пожалуйста, введите целое число.");
+                            Console.Write("Введите число: ");
+                        }
                         string result7 = p11.listNums(x);
                         Console.WriteLine("Результат: " + result7);
                         break;
+                    
                     case 3:
                         Program p12 = new Program();
                         Console.Write("Введите число: ");
-                        int x8 = Convert.ToInt32(Console.ReadLine());
+                        int x8;
+                        while (!int.TryParse(Console.ReadLine(), out x8))
+                        {
+                            Console.WriteLine("Некорректный ввод. Пожалуйста, введите целое число.");
+                            Console.Write("Введите число: ");
+                        }
                         string result8 = p12.Chet(x8);
                         Console.WriteLine("Четные числа от 0 до " + x8 + ": " + result8);
                         break;
+                    
                     case 5:
                         Program p13 = new Program();
                         Console.Write("Введите число: ");
-                        long x9 = Convert.ToInt64(Console.ReadLine());
+                        long x9;
+                        while (!long.TryParse(Console.ReadLine(), out x9))
+                        {
+                            Console.WriteLine("Некорректный ввод. Пожалуйста, введите целое число.");
+                            Console.Write("Введите число: ");
+                        }
                         int length1 = p13.NumLen(x9);
                         Console.WriteLine("Количество знаков в числе: " + length1);
                         break;
+                    
                     case 7:
                         Program p14 = new Program();
                         Console.Write("Введите размер квадрата: ");
-                        int x10 = Convert.ToInt32(Console.ReadLine());
+                        int x10;
+                        while (!int.TryParse(Console.ReadLine(), out x10))
+                        {
+                            Console.WriteLine("Некорректный ввод. Пожалуйста, введите целое число.");
+                            Console.Write("Введите размер квадрата: ");
+                        }
                         Console.WriteLine("");
                         p14.Square(x10);
                         break;
+                    
                     case 9:
                         Program p15 = new Program();
                         Console.Write("Введите высоту треугольника: ");
-                        int x11 = Convert.ToInt32(Console.ReadLine());
+                        int x11;
+                        while (!int.TryParse(Console.ReadLine(), out x11))
+                        {
+                            Console.WriteLine("Некорректный ввод. Пожалуйста, введите целое число.");
+                            Console.Write("Введите высоту треугольника: ");
+                        }
                         p15.rightTriangle(x11);
                         break;
+                    
                     default:
                         Console.WriteLine("Неправильный выбор задачи");
                         break;
+
                 }
                 break;
                 
