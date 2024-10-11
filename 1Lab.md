@@ -216,7 +216,6 @@ internal class Program
     {
         int[] result = new int[arr.Length + ins.Length];
     
-        // Копирование элементов из исходного массива до позиции вставки
         for (int i = 0; i < pos; i++)
         {
             result[i] = arr[i];
@@ -228,7 +227,6 @@ internal class Program
             result[pos + i] = ins[i];
         }
     
-        // Копирование оставшихся элементов 
         for (int i = pos; i < arr.Length; i++)
         {
             result[pos + ins.Length + i - pos] = arr[i];
